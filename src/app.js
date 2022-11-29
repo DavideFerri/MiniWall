@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-require('dotenv/config')
+const path = require('path')
 
 const bodyParser = require('body-parser')
-const { config } = require('dotenv')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const postsRoute = require('./routes/posts')
 const likeRoute = require('./routes/likes')
@@ -20,7 +20,6 @@ app.use('/posts/:postId/comments',commentsRoute)
 app.get('/', (req,res) => {
     res.send('Welcome to MiniWall!')
 })
-
 mongoose.connect(process.env.DB_CONNECTOR,()=>{
     console.log('DB is now connected')
 })
