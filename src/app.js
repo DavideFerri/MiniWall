@@ -4,13 +4,25 @@ const app = express()
 const mongoose = require('mongoose')
 const path = require('path')
 const bodyParser = require('body-parser')
+const swaggerJsdoc = require("swagger-jsdoc")
+const swaggerUi = require("swagger-ui-express")
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
+// import swagger
+const swaggerOptions = require("./swagger/swagger-config")
 
 // point to routes
 const postsRoute = require('./routes/posts')
 const likeRoute = require('./routes/likes')
 const commentsRoute = require('./routes/comments')
 const authRoute = require('./routes/auth')
+  
+const specs = swaggerJsdoc(swaggerOptions);
+app.use(
+"/api-docs",
+swaggerUi.serve,
+swaggerUi.setup(specs)
+);
 
 // relate routes to endpoints
 app.use(bodyParser.json())

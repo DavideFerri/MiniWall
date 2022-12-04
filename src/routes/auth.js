@@ -11,6 +11,7 @@ const {registerValidation,loginValidation} = require('../validations/validation'
 
 // endpoints
 router.post('/register',async(req,res)=>{
+    console.log(req.body)
     const {error} = registerValidation(req.body)
     if(error){
         res.status(400).send(error)
