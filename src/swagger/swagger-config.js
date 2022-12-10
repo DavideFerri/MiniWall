@@ -6,10 +6,10 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "LogRocket Express API with Swagger",
+      title: "Miniwall API with Swagger",
       version: "0.1.0",
       description:
-        "This is a simple CRUD API application made with Express and documented with Swagger",
+        "This is a simple API that allows the users to post their thoughts on a wall and see what everybody posts, to make comments to other people posts, and like them.",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",
