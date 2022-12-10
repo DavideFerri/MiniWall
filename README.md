@@ -29,8 +29,16 @@ This is a simple API that allows the users to post their thoughts on a wall and 
 - initiate a pull request when done
 
 #### Deployment
-- TODO
-- ensure all env variables are added to .github/workflows/python-app.yaml (without double quotes)
+- Deployment is done through Docker
+- Make changes to the repo (and to the Dockerfile if necessary)
+- Clone / Pull the changes in the VM which deploys the application
+- docker image build -t miniwall-image:1 . (build image)
+- docker container run -d --name miniwall-container --publish 80:3000 miniwall-image:1 (deploy container)
+
+#### Docs
+
+- Dynamic docs can be found in local at http://localhost:3000/api-docs/ after running "npm start" or in remote at http://34.130.11.127/api-docs/ (please note that the server might be down to save on costs)
+- A technical report can be found at ./report
 
 #### Security
 - ensure all sensitive data are in .env, and that .env is in .gitignore
