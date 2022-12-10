@@ -1,3 +1,8 @@
+/* I have read and understood the sections of plagiarism in the College Policy on assessment offences
+ and confirm that the work is my own, with the work of others clearly acknowledged. 
+ I give my permission to submit my report to the plagiarism testing database that the College
+is using and test it using plagiarism detection software, search engines or meta-searching software. */
+
 //import models
 swaggerSchemas = require("./schemas.js")
 const {User_s,Post_s,Comment_s,Like_s} = require("./schemas.js")
